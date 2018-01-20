@@ -11,7 +11,7 @@ const getCoinListApi = () => {
 const getCoinOverviewApi = symbol => {
   console.log(symbol);
   return fetch(`/api/coin/${symbol}`, {
-    mode: 'no-cors'
+    mode: 'cors'
   })
     .then(response => {
       return response.json();

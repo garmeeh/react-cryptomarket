@@ -1,10 +1,6 @@
 import { delay } from 'redux-saga';
 import { call, put, takeEvery } from 'redux-saga/effects';
-import {
-  getCoinListApi,
-  getReferenceCoinListApi,
-  getCoinOverviewApi
-} from '../api/coinMarketCapApi';
+import { getCoinListApi, getCoinOverviewApi } from '../api/coinMarketCapApi';
 import * as actions from '../actions';
 
 export function* fetchCoinList() {

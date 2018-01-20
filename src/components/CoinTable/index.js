@@ -11,8 +11,6 @@ export class CoinTable extends Component {
     this.props.updateSortList(sortBy);
   };
 
-  generateUrl = () => '/test';
-
   render() {
     const { sort, list } = this.props;
 
