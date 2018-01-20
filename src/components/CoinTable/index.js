@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { updateSortList } from '../../actions/';
 import FlipMove from 'react-flip-move';
+import CoinIcon from '../CoinIcon';
 import * as Formatted from '../DataFormatted';
 import * as st from './style';
 
@@ -80,10 +81,7 @@ export class CoinTable extends Component {
               <st.ListItem type="rank">{coin.rank}</st.ListItem>
               <st.ListItem type="name">
                 <st.ItemNameWrapper>
-                  <img
-                    alt=""
-                    src={`https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/icon/${coin.symbol.toLowerCase()}.png`}
-                  />
+                  <CoinIcon symbol={coin.symbol} />
                   <NavLink to={`/info/${coin.symbol}`}>
                     <st.NameFull>{`${coin.name} (${coin.symbol})`}</st.NameFull>
                     <st.NameSmall>{`${coin.name}`}</st.NameSmall>
