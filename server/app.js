@@ -34,4 +34,8 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
+app.listen(3001, 'localhost', function() {
+  console.log('RUNNING ON http://locahost:3001');
+});
+
 module.exports = app;
