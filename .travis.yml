@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "iojs"
+  - "9"
+install:
+  - yarn install
+script:
+  - test
+cache:
+  yarn: true
