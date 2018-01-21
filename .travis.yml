@@ -5,6 +5,12 @@ node_js:
 install:
   - yarn install
 script:
-  - test
+  - yarn test
 cache:
   yarn: true
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
+
