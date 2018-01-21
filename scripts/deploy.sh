@@ -1,1 +1,1 @@
-ssh deploy@IP 'cd react-cryptomarket/; git checkout master; git pull; yarn; yarn restart;'
+ssh deploy@$IP 'cd react-cryptomarket/; git checkout master; git pull; yarn; yarn restart;'
