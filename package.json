@@ -56,7 +56,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "production":
-      "node scripts/build.js && pm2 start \"./server/app.js\" -i max — name=\"React-Crypto\"",
+      "node scripts/build.js && pm2 start \"./server/app.js\" -i max",
     "restart": "pm2 restart all",
     "test": "node scripts/test.js --env=jsdom",
     "deploy":

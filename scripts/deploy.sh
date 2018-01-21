@@ -1,1 +1,1 @@
-echo "Testing Deploy Trigger"
+ssh deploy@178.62.2.65 'cd react-cryptomarket/; git checkout master; git pull; yarn; yarn restart;'
