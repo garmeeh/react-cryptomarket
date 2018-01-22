@@ -1,16 +1,17 @@
 #!/bin/bash
-set -x # Show the output of the following commands (useful for debugging)
-echo "running deploy script"
-eval "$(ssh-agent -s)" # Start ssh-agent cache
-chmod 600 ~/.ssh/id_rsa # Allow read access to the private key
-ssh-add ~/.ssh/id_rsa # Add the private key to SSH
+set -x
+if [ $TRAVIS_BRANCH == 'master' ] ; then
+    # Initialize a new git repo in _site, and push it to our server.
+    cd build
+    git init
 
-git config --global push.default matching
-git remote add deploy ssh://deploy@$IP:22:$DEPLOY_DIR
-git push deploy master
+    git remote add deploy "app_deploy@178.62.2.65:/var/www/crypto"
+    git config user.name "Travis CI"
+    git config user.email "garymeehan+travisCI@outlook.com"
 
-# Skip this command if you don't need to execute any additional commands after deploying.
-ssh -T deploy@$IP <<EOF
-  cd $DEPLOY_DIR
-  yarn install && yarn build && yarn restart
-EOF
+    git add .
+    git commit -m "Deploy"
+    git push --force deploy master
+else
+    echo "Not deploying, since this branch isn't master."
+fi
