@@ -7,6 +7,7 @@ const initialState = {
   },
   loading: false,
   sort: 'market_cap_eur',
+  sort: 'rank',
   lastUpdate: new Date()
 };
 

@@ -7,6 +7,7 @@ import Footer from '../Footer';
 import ListPage from '../../container/ListPage';
 import MyWalletPage from '../../container/MyWalletPage';
 import DetailPage from '../../container/DetailPage';
+import AboutPage from '../../container/AboutPage';
 
 class App extends Component {
   render() {
@@ -21,6 +22,8 @@ class App extends Component {
             <Route exact path="/wallet" component={MyWalletPage} />
             <Route exact path="/:view?" component={ListPage} />
             <Route exact path="/info/:id" component={DetailPage} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route path="/:view?" component={ListPage} />
           </Switch>
         </BodyWrapper>
         <Footer />
