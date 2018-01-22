@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x # Show the output of the following commands (useful for debugging)
+set -x
 
 # Import the SSH deployment key
 openssl aes-256-cbc -K $encrypted_24baf089f7ed_key -iv $encrypted_24baf089f7ed_iv
