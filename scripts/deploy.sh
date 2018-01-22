@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x # Show the output of the following commands (useful for debugging)
 echo "running deploy script"
 eval "$(ssh-agent -s)" # Start ssh-agent cache
 chmod 600 id_rsa # Allow read access to the private key
