@@ -8,7 +8,7 @@ script:
 cache:
   yarn: true
 before_install:
-- sh scritps/install.sh
+- sh scripts/install.sh
 after_success:
 - sh scripts/deploy.sh
 addons:
