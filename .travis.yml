@@ -8,7 +8,11 @@ script:
 cache:
   yarn: true
 before_install:
-- bash scripts/install.sh
+- openssl aes-256-cbc -K $encrypted_24baf089f7ed_key -iv $encrypted_24baf089f7ed_iv
+  -in id_rsa.enc -out id_rsa -d
+- rm id_rsa.enc
+- chmod 600 id_rsa
+- mv id_rsa ~/.ssh/id_rsa
 after_success:
 - sh scripts/deploy.sh
 addons:
